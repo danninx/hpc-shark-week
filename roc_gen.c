@@ -374,7 +374,10 @@ int main(int argc, char **argv) {
             printf("# value:\n%s\n", vbuf.s);
             printf("# pattern:\n%s\n", pbuf.s);
         } else {
+            FILE *f = fopen("roc_pair.txt", "w");
+            fprintf(f, "%s\n%s\n", vbuf.s, pbuf.s);
             printf("%s\n%s\n", vbuf.s, pbuf.s);
+            fclose(f);
         }
 
         buf_free(&vbuf);
